@@ -5,3 +5,52 @@
   padding: 0;
   margin: 0;
 }
+
+body {
+  background: #111;
+  font-family: Inter, sans-serif;
+}
+
+.animated-section {
+  height: 100vh;
+  padding-top: 140px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.animated-section__card {
+  width: 240px;
+  height: 35Opx;
+  flex-shrink: 0;
+  border-radius: 10px;
+  /*  */
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding: 5px;
+  background-color: rgb (128, 128, 128, 0.1);
+}
+
+.animated-section__layer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+  height: 100%;
+  font-size: 28px;
+  background-color: rgb (26, 26, 26);
+  transition: background-color 0.4s ease-out;
+}
+
+.animated-section__layer-text {
+  color: #d2d2d2;
+  margin-bottom: 36px;
+}
+
+@media (pointer: fine) {
+  .animated-section__card:hover > .animated-section__layer {
+    background-color: rgb (26, 26, 26, 0.6);
+  }
+}
