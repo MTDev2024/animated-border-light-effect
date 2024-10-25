@@ -2,8 +2,8 @@
 ::before,
 ::after {
   box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 body {
@@ -11,46 +11,60 @@ body {
   font-family: Inter, sans-serif;
 }
 
-.animated-section {
+.glow-section {
   height: 100vh;
-  padding-top: 140px;
+  padding-top: 120px;
   display: flex;
   justify-content: center;
-  gap: 16px;
+  gap: 14px;
 }
 
-.animated-section__card {
+.glow-section__card {
   width: 240px;
-  height: 35Opx;
+  height: 350px;
   flex-shrink: 0;
   border-radius: 10px;
-  /*  */
   cursor: pointer;
+  /* !!! */
   position: relative;
   z-index: 1;
   overflow: hidden;
   padding: 5px;
-  background-color: rgb (128, 128, 128, 0.1);
+  background-color: rgb(128, 128, 128, 0.1); /* Correction ici */
 }
 
-.animated-section__layer {
+.glow-section__top-layer {
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 7px;
   height: 100%;
   font-size: 28px;
-  background-color: rgb (26, 26, 26);
+  background-color: rgb(26, 26, 26);
   transition: background-color 0.4s ease-out;
 }
 
-.animated-section__layer-text {
+.glow-section__top-layer-text {
   color: #d2d2d2;
   margin-bottom: 36px;
 }
 
 @media (pointer: fine) {
-  .animated-section__card:hover > .animated-section__layer {
-    background-color: rgb (26, 26, 26, 0.6);
+  .glow-section__card:hover > .glow-section__top-layer {
+    background: rgb(26, 26, 26, 0.8); /* Modification optionnelle */
   }
+}
+
+.glow-section__blob {
+  filter: blur(40px);
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255, 0.8); /* Correction ici */
+  background-image: linear-gradient(22.5deg, rgb(202, 162, 38) 0%, rgb(202, 162, 38) 30%,rgb(200, 172, 46) 30%, rgb(200, 172, 46) 41%,rgb(197, 183, 54) 41%, rgb(197, 183, 54) 51%,rgb(195, 193, 62) 51%, rgb(195, 193, 62) 56%,rgb(193, 203, 69) 56%, rgb(193, 203, 69) 83%,rgb(190, 214, 77) 83%, rgb(190, 214, 77) 95%,rgb(188, 224, 85) 95%, rgb(188, 224, 85) 100%),linear-gradient(0deg, rgb(202, 162, 38) 0%, rgb(202, 162, 38) 30%,rgb(200, 172, 46) 30%, rgb(200, 172, 46) 41%,rgb(197, 183, 54) 41%, rgb(197, 183, 54) 51%,rgb(195, 193, 62) 51%, rgb(195, 193, 62) 56%,rgb(193, 203, 69) 56%, rgb(193, 203, 69) 83%,rgb(190, 214, 77) 83%, rgb(190, 214, 77) 95%,rgb(188, 224, 85) 95%, rgb(188, 224, 85) 100%),linear-gradient(157.5deg, rgb(202, 162, 38) 0%, rgb(202, 162, 38) 30%,rgb(200, 172, 46) 30%, rgb(200, 172, 46) 41%,rgb(197, 183, 54) 41%, rgb(197, 183, 54) 51%,rgb(195, 193, 62) 51%, rgb(195, 193, 62) 56%,rgb(193, 203, 69) 56%, rgb(193, 203, 69) 83%,rgb(190, 214, 77) 83%, rgb(190, 214, 77) 95%,rgb(188, 224, 85) 95%, rgb(188, 224, 85) 100%),linear-gradient(90deg, rgb(197, 2, 127),rgb(52, 76, 85)); background-blend-mode:overlay,overlay,overlay,normal;
 }
